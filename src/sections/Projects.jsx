@@ -24,7 +24,7 @@ function Projects() {
           <div className="md:col-span-2 group">
 
             <div
-              onClick={() => selectedProject(projects[0])}
+              onClick={() => setSelectedProject(projects[0])}
               className="
                 cursor-pointer
                 bg-white/5
@@ -220,7 +220,7 @@ function Projects() {
                   <button
                     className="
                       px-6
-                      px-3
+                      py-3
                       rounded-xl
                       bg-blue-600
                       text-white
@@ -354,7 +354,7 @@ function Projects() {
           <a
             href={selectedProject.github}
             target="_blank"
-            rel="noonpener noreferre"
+            rel="noopener noreferre"
             className="
               px-5
               py-3

@@ -34,3 +34,10 @@ body {
   background: #2563eb;
   border-radius: 999px;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scroll-behavior: smooth;
+}

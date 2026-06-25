@@ -1,19 +1,35 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 import "./index.css";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import App from "./App.jsx";
+import Lenis from "lenis";
 
+// AOS
 AOS.init({
   duration: 1000,
   once: true,
+  easing: "ease-out-cubic",
 });
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
+// Lenis
+const lenis = new Lenis({
+  duration: 1.4,
+  smoothWheel: true,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
     <App />
-  </StrictMode>
+  </React.StrictMode>
 );

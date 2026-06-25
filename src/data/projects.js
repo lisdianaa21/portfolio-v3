@@ -2,9 +2,11 @@ import moveride from "../assets/projects/moveride.jpg";
 import kuliner from "../assets/projects/kuliner.png";
 import antrian from "../assets/projects/antrian.png";
 import portfolio from "../assets/projects/portofolio.png";
+import tokobunga from "../assets/projects/toko-bunga.png";
 
 export const projects = [
   {
+    id: 1,
     title: "MoveRide Premium",
     tech: "React • Firebase • Tailwind",
     image: moveride,
@@ -16,10 +18,11 @@ export const projects = [
   },
 
   {
+    id: 2,
     title: "Kuliner Nusantara",
     tech: "React • Tailwind",
     image: kuliner,
-    status: "Completed",
+    status: "On Progress",
     description:
       "Website katalog makanan khas Indonesia yang menampilkan berbagai kuliner berdasarkan provinsi lengkap dengan informasi dan gambar.",
     github: "https://github.com/lisdianaa21/jelajahrasa",
@@ -27,24 +30,38 @@ export const projects = [
   },
 
   {
+    id: 3,
     title: "Sistem Antrian Online",
     tech: "HTML • CSS • JavaScript",
     image: antrian,
     status: "On Progress",
     description:
       "Aplikasi antrian online yang membantu pengguna mengambil nomor antrian secara digital dan memantau giliran secara real-time.",
-    github: "https://github.com/lisdianaa21/sistem-antrian.git",
+    github: "https://github.com/lisdianaa21/sistem-antrian",
     demo: "#",
   },
 
   {
+    id: 4,
     title: "Personal Portfolio",
     tech: "React • Tailwind • Vite",
     image: portfolio,
-    status: "On Progress",
+    status: "Compled",
     description:
       "Website portfolio pribadi yang menampilkan profil, project, tech stack, kontak, dan desain modern dengan animasi interaktif.",
     github: "https://github.com/lisdianaa21/portfolio-v3",
+    demo: "#",
+  },
+
+  {
+    id: 5,
+    title: "Toko Bunga Segar",
+    tech: "React • Tailwind • Vite",
+    image: tokobunga,
+    status: "On Progress",
+    description:
+      "Website toko bunga sederhana yang menampilkan katalog bunga segar dengan desain clean dan modern.",
+    github: "https://github.com/lisdianaa21/tokobungaa",
     demo: "#",
   },
 ];

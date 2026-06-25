@@ -6,82 +6,137 @@ function About() {
     >
       <div className="max-w-6xl mx-auto">
 
-        <h2 className="text-5xl font-bold text-white">
-          Tentang Saya
-        </h2>
+        <div className="grid md:grid-cols-2 gap-16 items-center">
 
-        <p className="text-slate-400 mt-4">
-          Kenalan lebih dekat dengan saya.
-        </p>
+          {/* KIRI */}
+          <div>
 
-        <div
-          className="
-          mt-12
-          bg-white/5
-          border
-          border-white/10
-          rounded-3xl
-          p-10
-          backdrop-blur-md
-          "
-        >
+            <span
+              className="
+                text-blue-400
+                uppercase
+                tracking-[4px]
+              "
+            >
+              About Me
+            </span>
 
-          <p
+            <h2
+              className="
+                text-5xl
+                font-bold
+                text-white
+                mt-4
+              "
+            >
+              Frontend Developer
+            </h2>
+
+            <p
+              className="
+                text-slate-400
+                mt-6
+                leading-relaxed
+              "
+            >
+              Saya adalah mahasiswa yang memiliki
+              minat besar dalam Frontend Development
+              dan UI Design.
+            </p>
+
+            <p
+              className="
+                text-slate-400
+                mt-4
+                leading-relaxed
+              "
+            >
+              Saya senang membangun website modern,
+              responsif, dan user-friendly menggunakan
+              React, Tailwind CSS, serta berbagai
+              teknologi web modern lainnya.
+            </p>
+
+            <p
+              className="
+                text-slate-400
+                mt-4
+                leading-relaxed
+              "
+            >
+              Saat ini saya terus mengembangkan
+              kemampuan melalui berbagai project
+              pribadi untuk memperdalam pengalaman
+              dalam membangun aplikasi web modern.
+            </p>
+
+          </div>
+
+          {/* KANAN */}
+          <div
             className="
-            text-slate-300
-            text-lg
-            leading-relaxed
+              bg-white/5
+              border
+              border-white/10
+              rounded-3xl
+              p-8
+              backdrop-blur-md
+
+              hover:border-blue-500/40
+              hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]
+
+              transition-all
+              duration-500
             "
           >
-            Halo, saya <span className="text-white font-semibold">Lis Diana Putri</span>.
-            Saya seorang Frontend Developer yang fokus membangun website
-            modern, responsif, dan user-friendly menggunakan React,
-            Tailwind CSS, dan Firebase.
-          </p>
 
-          <p
-            className="
-            text-slate-400
-            mt-6
-            leading-relaxed
-            "
-          >
-            Saya senang mengubah desain menjadi website yang menarik,
-            cepat, dan nyaman digunakan oleh pengguna.
-          </p>
+            <div className="space-y-6">
+
+              <div>
+                <h3 className="text-white font-semibold">
+                  Nama
+                </h3>
+
+                <p className="text-slate-400">
+                  Lis Diana Putri
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-white font-semibold">
+                  Fokus
+                </h3>
+
+                <p className="text-slate-400">
+                  Frontend Development
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-white font-semibold">
+                  Tech Favorite
+                </h3>
+
+                <p className="text-slate-400">
+                  React • Tailwind CSS • Firebase
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-white font-semibold">
+                  Status
+                </h3>
+
+                <p className="text-green-400">
+                  Open To Learn 🚀
+                </p>
+              </div>
+
+            </div>
+
+          </div>
 
         </div>
-
-        <div className="grid md:grid-cols-3 gap-6 mt-10">
-
-  <div className="bg-white/5 p-6 rounded-2xl">
-    <h3 className="text-4xl font-bold text-blue-400">
-      4+
-    </h3>
-    <p className="text-slate-400">
-      Project
-    </p>
-  </div>
-
-  <div className="bg-white/5 p-6 rounded-2xl">
-    <h3 className="text-4xl font-bold text-blue-400">
-      9+
-    </h3>
-    <p className="text-slate-400">
-      Technologies
-    </p>
-  </div>
-
-  <div className="bg-white/5 p-6 rounded-2xl">
-    <h3 className="text-4xl font-bold text-blue-400">
-      100%
-    </h3>
-    <p className="text-slate-400">
-      Learning Spirit
-    </p>
-  </div>
-
-</div>
 
       </div>
     </section>
