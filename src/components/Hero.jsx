@@ -1,4 +1,3 @@
-import ParticlesBackground from "./ParticlesBackground";
 import profile from "../assets/profile.png";
 import { useEffect, useState } from "react";
 
@@ -52,7 +51,6 @@ function Hero() {
           "
         />
 
-        <ParticlesBackground />
       <div className="max-w-7xl mx-auto px-8 w-full relative z-10">
 
         <div className="grid lg:grid-cols-3 items-center gap-10">
