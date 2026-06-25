@@ -351,11 +351,10 @@ function Projects() {
 
         <div className="flex gap-4 mt-8">
 
-          <button
-            onClick={() => {
-              window.open(selectedProject.github, "_blank");
-              setSelectedProject(null);
-            }}
+          <a
+            href={selectedProject.github}
+            target="_blank"
+            rel="noonpener noreferre"
             className="
               px-5
               py-3
@@ -365,7 +364,7 @@ function Projects() {
             "
           >
             GitHub
-          </button>
+          </a>
 
           <a
             href={selectedProject.demo}

@@ -33,7 +33,7 @@ export const projects = [
     status: "On Progress",
     description:
       "Aplikasi antrian online yang membantu pengguna mengambil nomor antrian secara digital dan memantau giliran secara real-time.",
-    github: "https://github.com/lisdianaa21/antrianku",
+    github: "https://github.com/lisdianaa21/sistem-antrian.git",
     demo: "#",
   },
 
