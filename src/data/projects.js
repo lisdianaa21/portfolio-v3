@@ -11,7 +11,7 @@ export const projects = [
     status: "Completed",
     description:
       "Aplikasi transportasi online modern yang terinspirasi dari Gojek dan Grab. Memiliki fitur booking ride, payment, tracking driver, history transaksi, dan UI premium.",
-    github: "https://github.com/username/moveride",
+    github: "https://github.com/lisdianaa21/transport-app",
     demo: "#",
   },
 
@@ -22,7 +22,7 @@ export const projects = [
     status: "Completed",
     description:
       "Website katalog makanan khas Indonesia yang menampilkan berbagai kuliner berdasarkan provinsi lengkap dengan informasi dan gambar.",
-    github: "https://github.com/username/kuliner-nusantara",
+    github: "https://github.com/lisdianaa21/jelajahrasa",
     demo: "#",
   },
 
@@ -33,7 +33,7 @@ export const projects = [
     status: "On Progress",
     description:
       "Aplikasi antrian online yang membantu pengguna mengambil nomor antrian secara digital dan memantau giliran secara real-time.",
-    github: "https://github.com/username/sistem-antrian",
+    github: "https://github.com/lisdianaa21/antrianku",
     demo: "#",
   },
 
@@ -44,7 +44,7 @@ export const projects = [
     status: "On Progress",
     description:
       "Website portfolio pribadi yang menampilkan profil, project, tech stack, kontak, dan desain modern dengan animasi interaktif.",
-    github: "https://github.com/username/portfolio-v3",
+    github: "https://github.com/lisdianaa21/portfolio-v3",
     demo: "#",
   },
 ];

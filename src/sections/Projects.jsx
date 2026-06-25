@@ -24,7 +24,9 @@ function Projects() {
           <div className="md:col-span-2 group">
 
             <div
+              onClick={() => selectedProject(projects[0])}
               className="
+                cursor-pointer
                 bg-white/5
                 border border-white/10
                 rounded-3xl
@@ -150,6 +152,7 @@ function Projects() {
               onClick={() => setSelectedProject(project)}
               className="
                 group
+                cursor-pointer
                 bg-white/5
                 border border-white/10
                 rounded-3xl
@@ -199,32 +202,33 @@ function Projects() {
                 <div
                   className="
                     absolute
-                    bottom-4
-                    left-4
+                    inset-0
+                    flex
+                    items-center
+                    justify-center
+
+                    bg-black/50
+                    backdrop-blur-sm
 
                     opacity-0
-                    translate-y-4
-
                     group-hover:opacity-100
-                    group-hover:translate-y-0
 
                     transition-all
                     duration-500
                   "
                 >
-                  <span
+                  <button
                     className="
-                      bg-blue-500/20
-                      text-blue-300
-                      px-4
-                      py-2
-                      rounded-full
-                      backdrop-blur-md
-                      text-sm
+                      px-6
+                      px-3
+                      rounded-xl
+                      bg-blue-600
+                      text-white
+                      font-semibold
                     "
                   >
                     View Project →
-                  </span>
+                  </button>
                 </div>
 
               </div>
@@ -283,6 +287,7 @@ function Projects() {
   >
     <div
       className="
+        relative
         bg-[#111827]
         border
         border-white/10
@@ -294,6 +299,25 @@ function Projects() {
       "
       onClick={(e) => e.stopPropagation()}
     >
+      <button
+        onClick={() => setSelectedProject(null)}
+        className="
+          absolute
+          top-4
+          right-4
+          w-10
+          h-10
+          rounded-full
+          bg-black/40
+          text-white
+          hover:bg-black/60
+          transition
+          z-10
+        "
+        >
+          X
+      </button>
+
       <img
         src={selectedProject.image}
         alt={selectedProject.title}
@@ -301,6 +325,21 @@ function Projects() {
       />
 
       <div className="p-8">
+
+        <button
+          onClick={() => setSelectedProject(null)}
+          className="
+            mb-6 
+            flex
+            items-center
+            gap-2
+            text-blue-400
+            hover:text-blue-300
+            font-medium
+            "  
+          >
+            ← Kembali
+        </button>
 
         <h3 className="text-3xl font-bold text-white">
           {selectedProject.title}
@@ -312,8 +351,11 @@ function Projects() {
 
         <div className="flex gap-4 mt-8">
 
-          <a
-            href={selectedProject.github}
+          <button
+            onClick={() => {
+              window.open(selectedProject.github, "_blank");
+              setSelectedProject(null);
+            }}
             className="
               px-5
               py-3
@@ -323,10 +365,13 @@ function Projects() {
             "
           >
             GitHub
-          </a>
+          </button>
 
           <a
             href={selectedProject.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setSelectedProject(null)}
             className="
               px-5
               py-3
