@@ -1,4 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
+import {
+  FaAward,
+  FaUser,
+  FaLaptopCode,
+  FaCode,
+  FaEnvelope,
+} from "react-icons/fa";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -9,30 +16,30 @@ function Navbar() {
       {
         id: "certificates",
         label: "Certificates",
-        mobile: "Cert",
+        icon: <FaAward />,
       },
       {
         id: "about",
         label: "About",
-        mobile: "About",
+        icon: <FaUser />,
       },
       {
         id: "projects",
         label: "Projects",
-        mobile: "Proj",
+        icon: <FaLaptopCode />,
       },
       {
         id: "skills",
         label: "Skills",
-        mobile: "Skill",
+        icon: <FaCode />,
       },
       {
         id: "contact",
         label: "Contact",
-        mobile: "Cont",
+        icon: <FaEnvelope />,
       },
     ],
-    []
+    [],
   );
 
   useEffect(() => {
@@ -44,13 +51,10 @@ function Navbar() {
       let current = active;
 
       sections.forEach((section) => {
-        const top = section.offsetTop - 180;
+        const top = section.offsetTop - 150;
         const height = section.offsetHeight;
 
-        if (
-          window.scrollY >= top &&
-          window.scrollY < top + height
-        ) {
+        if (window.scrollY >= top && window.scrollY < top + height) {
           current = section.id;
         }
       });
@@ -62,163 +66,85 @@ function Navbar() {
 
     handleScroll();
 
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [active]);
 
-  const activeIndex = navLinks.findIndex(
-    (item) => item.id === active
-  );
-
-  const badgePosition = [
-    "translate-x-0",
-    "translate-x-[60px] sm:translate-x-[72px] md:translate-x-[86px] lg:translate-x-[104px] xl:translate-x-[122px]",
-    "translate-x-[120px] sm:translate-x-[144px] md:translate-x-[172px] lg:translate-x-[208px] xl:translate-x-[244px]",
-    "translate-x-[180px] sm:translate-x-[216px] md:translate-x-[258px] lg:translate-x-[312px] xl:translate-x-[366px]",
-    "translate-x-[240px] sm:translate-x-[288px] md:translate-x-[344px] lg:translate-x-[416px] xl:translate-x-[488px]",
-  ];
-    return (
+  return (
     <nav
       className={`
         fixed
         left-1/2
         -translate-x-1/2
         z-50
-
         transition-all
-        duration-700
-        ease-out
-
+        duration-500
         ${
           scrolled
-            ? `
-              top-4
-              opacity-100
-              scale-100
-              pointer-events-auto
-            `
-            : `
-              -top-20
-              opacity-0
-              scale-95
-              pointer-events-none
-            `
+            ? "top-3 opacity-100 scale-100"
+            : "-top-20 opacity-0 scale-95 pointer-events-none"
         }
       `}
     >
       <div
         className="
-          relative
+          flex
+          items-center
+          gap-1
 
-          bg-white/10
-          backdrop-blur-2xl
+          rounded-full
 
           border
           border-white/10
 
-          rounded-full
+          bg-white/10
+          backdrop-blur-2xl
 
-          shadow-[0_10px_40px_rgba(0,0,0,.25)]
+          p-2
 
-          px-2
-          sm:px-3
-          md:px-4
-
-          py-2
+          shadow-[0_8px_35px_rgba(0,0,0,.35)]
         "
       >
-        {/* ACTIVE BADGE */}
-        <div
-          className={`
-            absolute
-            top-2
-            left-2
+        {navLinks.map((link) => (
+          <a
+            key={link.id}
+            href={`#${link.id}`}
+            className={`
+              flex
+              items-center
+              justify-center
 
-            h-10
+              rounded-full
 
-            w-[56px]
-            sm:w-[68px]
-            md:w-[82px]
-            lg:w-[100px]
-            xl:w-[118px]
+              transition-all
+              duration-300
 
-            rounded-full
+              ${
+                active === link.id
+                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg"
+                  : "text-slate-300 hover:bg-white/10 hover:text-white"
+              }
 
-            bg-gradient-to-r
-            from-blue-500
-            to-cyan-400
+              h-10
+              w-10
 
-            shadow-[0_0_25px_rgba(59,130,246,.55)]
+              sm:h-11
+              sm:w-11
 
-            transition-all
-            duration-500
-            ease-out
+              lg:h-11
+              lg:w-auto
+              lg:px-5
+            `}
+          >
+            {/* Mobile */}
+            <span className="text-lg lg:hidden">{link.icon}</span>
 
-            ${badgePosition[activeIndex]}
-          `}
-        />
-
-        <ul
-          className="
-            relative
-            flex
-            items-center
-            gap-0
-          "
-        >
-          {navLinks.map((link) => (
-            <li key={link.id}>
-              <a
-                href={`#${link.id}`}
-                className={`
-                  relative
-                  z-10
-
-                  flex
-                  items-center
-                  justify-center
-
-                  h-10
-
-                  w-[56px]
-                  sm:w-[68px]
-                  md:w-[82px]
-                  lg:w-[100px]
-                  xl:w-[118px]
-
-                  rounded-full
-
-                  text-[10px]
-                  sm:text-[11px]
-                  md:text-xs
-                  lg:text-sm
-
-                  font-medium
-
-                  transition-all
-                  duration-300
-
-                  hover:scale-105
-                  active:scale-95
-
-                  ${
-                    active === link.id
-                      ? "text-white"
-                      : "text-slate-300 hover:text-white"
-                  }
-                `}
-              >
-                <span className="hidden lg:block">
-                  {link.label}
-                </span>
-
-                <span className="block lg:hidden">
-                  {link.mobile}
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
+            {/* Desktop */}
+            <span className="hidden items-center gap-2 lg:flex">
+              {link.icon}
+              <span className="text-sm font-medium">{link.label}</span>
+            </span>
+          </a>
+        ))}
       </div>
     </nav>
   );
