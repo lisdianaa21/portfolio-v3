@@ -73,35 +73,39 @@ function Navbar() {
     <nav
       className={`
         fixed
-        left-1/2
-        -translate-x-1/2
+        top-3
         z-50
+        flex
+        justify-center
+        px-3
+
         transition-all
         duration-500
         ${
           scrolled
-            ? "top-3 opacity-100 scale-100"
-            : "-top-20 opacity-0 scale-95 pointer-events-none"
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-10 pointer-events-none"
         }
       `}
     >
       <div
         className="
           flex
-          items-center
-          gap-1
+          w-full
+          max-w-md
+          lg:max-w-fit
 
+          items-center
           rounded-full
 
           border
-          border-white/10
+          border-full
 
-          bg-white/10
-          backdrop-blur-2xl
+          bg-black/30
+          backdrop-blur-xl
 
           p-2
-
-          shadow-[0_8px_35px_rgba(0,0,0,.35)]
+          shadow-xl
         "
       >
         {navLinks.map((link) => (
@@ -109,40 +113,36 @@ function Navbar() {
             key={link.id}
             href={`#${link.id}`}
             className={`
+              flex-1
+              lg:fflex-none
               flex
               items-center
               justify-center
 
               rounded-full
+              py-2
+              px-3
 
+              lg:px-5
               transition-all
               duration-300
 
-              ${
-                active === link.id
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg"
-                  : "text-slate-300 hover:bg-white/10 hover:text-white"
-              }
-
-              h-10
-              w-10
-
-              sm:h-11
-              sm:w-11
-
-              lg:h-11
-              lg:w-auto
-              lg:px-5
-            `}
+            ${
+              active === link.id
+                ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white"
+                : "text-slate-300 hover:bg-white/10 hover:text-white"
+            }
+          `}
           >
             {/* Mobile */}
-            <span className="text-lg lg:hidden">{link.icon}</span>
+            <>
+              <span className="text-lg lg:hidden">{link.icon}</span>
 
-            {/* Desktop */}
-            <span className="hidden items-center gap-2 lg:flex">
-              {link.icon}
-              <span className="text-sm font-medium">{link.label}</span>
-            </span>
+              <span className="hidden lg:flex items-center gap-2">
+                {link.icon}
+                {link.label}
+              </span>
+            </>
           </a>
         ))}
       </div>
