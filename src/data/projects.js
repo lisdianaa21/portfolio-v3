@@ -3,6 +3,7 @@ import kuliner from "../assets/projects/kuliner.png";
 import antrian from "../assets/projects/antrian.png";
 import portfolio from "../assets/projects/portofolio.png";
 import tokobunga from "../assets/projects/toko-bunga.png";
+import medcarehospital from "../assets/projects/medcare-hospital.png";
 
 export const projects = [
   {
@@ -62,6 +63,17 @@ export const projects = [
     description:
       "Website toko bunga sederhana yang menampilkan katalog bunga segar dengan desain clean dan modern.",
     github: "https://github.com/lisdianaa21/tokobungaa",
+    demo: "#",
+  },
+  {
+    id: 6,
+    title: "MedCare Internal System",
+    tech: "React • Tailwind • Vite",
+    image: medcarehospital,
+    status: "On Progress",
+    description:
+      "Manajemen Antrean & Jadwal Dokter: Petugas administrasi dapat memantau, mengatur, dan mengalihkan antrean pasien secara real-time sesuai dengan kehadiran dokter yang bertugas.",
+    github: "https://github.com/lisdianaa21/MedCare-Dashboard.git",
     demo: "#",
   },
 ];

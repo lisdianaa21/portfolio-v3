@@ -1,3 +1,4 @@
+import LoadingScreen from "./components/LoadingScreen";
 import CursorGlow from "./components/CursorGlow";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -14,6 +15,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
+      <LoadingScreen />
       <CursorGlow />
       <Navbar />
       <Hero />

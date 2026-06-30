@@ -17,7 +17,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 animate-fade">
 
         {/* BACKGROUND GLOW */}
         <div
